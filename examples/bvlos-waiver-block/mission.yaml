@@ -1,0 +1,24 @@
+mission_id: waiver-altitude-block
+operation: inspection
+waiver_profile: part91-200ft-bvlos
+max_altitude_ft: 200
+airspace_class: G
+shift_preflight_completed: true
+deconfliction_enabled: true
+requires_adsb: true
+weather:
+  wind_mph: 10
+  precip: false
+sites:
+  - site_id: tower-site-b
+    concurrent_missions: 1
+drones:
+  - drone_id: x10-bravo
+    battery_soc_percent: 92
+    battery_cycles: 60
+    software_version: "2.4.0"
+    min_software_version: "2.4.0"
+    adsb_in: true
+    rapid_preflight_done: true
+    planned_max_altitude_ft: 380
+    geofence_id: tower-b

@@ -1,0 +1,296 @@
+{
+  "runs": [
+    {
+      "doctor": {
+        "run_id": "20260708T064432Z-bvlos-waiver-block",
+        "receipt_dir": "/Users/enaguthiabhishek/skydio/skydio-mission-preflight/out/site-export/receipts/20260708T064432Z-bvlos-waiver-block",
+        "mission_id": "waiver-altitude-block",
+        "overall_status": "blocked",
+        "launch_recommendation": "hold",
+        "checks": [
+          {
+            "signal": "shift_preflight",
+            "status": "pass",
+            "message": "Shift-start preflight completed",
+            "details": {}
+          },
+          {
+            "signal": "rapid_preflight",
+            "status": "pass",
+            "message": "All launching drones passed rapid preflight",
+            "details": {}
+          },
+          {
+            "signal": "battery_health",
+            "status": "pass",
+            "message": "All drone batteries within limits",
+            "details": {}
+          },
+          {
+            "signal": "software_freshness",
+            "status": "pass",
+            "message": "Fleet software meets minimum versions",
+            "details": {}
+          },
+          {
+            "signal": "adsb_bvlos",
+            "status": "pass",
+            "message": "ADS-B In present on all launching drones",
+            "details": {}
+          },
+          {
+            "signal": "waiver_altitude",
+            "status": "fail",
+            "message": "Planned altitude exceeds waiver: x10-bravo (380ft > 200ft waiver cap)",
+            "details": {
+              "violations": [
+                "x10-bravo (380ft > 200ft waiver cap)"
+              ],
+              "waiver_cap_ft": 200
+            }
+          },
+          {
+            "signal": "weather_window",
+            "status": "pass",
+            "message": "Weather within operational window",
+            "details": {}
+          },
+          {
+            "signal": "multi_drone_deconfliction",
+            "status": "pass",
+            "message": "Fleet deconfliction enabled for concurrent operations",
+            "details": {}
+          }
+        ]
+      },
+      "summary": {
+        "run_id": "20260708T064432Z-bvlos-waiver-block",
+        "mission_id": "waiver-altitude-block",
+        "operation": "inspection",
+        "waiver_profile": "part91-200ft-bvlos",
+        "drone_count": 1,
+        "input_dir": "/Users/enaguthiabhishek/skydio/skydio-mission-preflight/examples/bvlos-waiver-block"
+      },
+      "plan": {
+        "mission_id": "waiver-altitude-block",
+        "operation": "inspection",
+        "waiver_profile": "part91-200ft-bvlos",
+        "max_altitude_ft": 200,
+        "airspace_class": "G",
+        "drone_count": 1,
+        "site_count": 1,
+        "rules": {
+          "min_battery_soc_percent": 80,
+          "max_battery_cycles": 300,
+          "max_wind_mph": 25,
+          "require_adsb_for_bvlos": true,
+          "require_shift_preflight": true,
+          "require_rapid_preflight_per_drone": true,
+          "max_concurrent_per_site_without_deconfliction": 1
+        },
+        "risks": [
+          "BVLOS waiver \u2014 ADS-B In and altitude caps apply"
+        ],
+        "source_mission": "/Users/enaguthiabhishek/skydio/skydio-mission-preflight/examples/bvlos-waiver-block/mission.yaml"
+      },
+      "receipt_dir": "out/site-export/receipts/20260708T064432Z-bvlos-waiver-block"
+    },
+    {
+      "doctor": {
+        "run_id": "20260708T064432Z-dfr-rapid-launch",
+        "receipt_dir": "/Users/enaguthiabhishek/skydio/skydio-mission-preflight/out/site-export/receipts/20260708T064432Z-dfr-rapid-launch",
+        "mission_id": "lvmpd-dfr-rapid-001",
+        "overall_status": "cleared",
+        "launch_recommendation": "go",
+        "checks": [
+          {
+            "signal": "shift_preflight",
+            "status": "pass",
+            "message": "Shift-start preflight completed",
+            "details": {}
+          },
+          {
+            "signal": "rapid_preflight",
+            "status": "pass",
+            "message": "All launching drones passed rapid preflight",
+            "details": {}
+          },
+          {
+            "signal": "battery_health",
+            "status": "pass",
+            "message": "All drone batteries within limits",
+            "details": {}
+          },
+          {
+            "signal": "software_freshness",
+            "status": "pass",
+            "message": "Fleet software meets minimum versions",
+            "details": {}
+          },
+          {
+            "signal": "adsb_bvlos",
+            "status": "pass",
+            "message": "ADS-B In present on all launching drones",
+            "details": {}
+          },
+          {
+            "signal": "waiver_altitude",
+            "status": "pass",
+            "message": "All planned altitudes within 200ft waiver cap",
+            "details": {
+              "waiver_cap_ft": 200
+            }
+          },
+          {
+            "signal": "weather_window",
+            "status": "pass",
+            "message": "Weather within operational window",
+            "details": {}
+          },
+          {
+            "signal": "multi_drone_deconfliction",
+            "status": "pass",
+            "message": "No concurrent geofence overlap detected",
+            "details": {}
+          }
+        ]
+      },
+      "summary": {
+        "run_id": "20260708T064432Z-dfr-rapid-launch",
+        "mission_id": "lvmpd-dfr-rapid-001",
+        "operation": "dfr",
+        "waiver_profile": "part91-200ft-bvlos",
+        "drone_count": 1,
+        "input_dir": "/Users/enaguthiabhishek/skydio/skydio-mission-preflight/examples/dfr-rapid-launch"
+      },
+      "plan": {
+        "mission_id": "lvmpd-dfr-rapid-001",
+        "operation": "dfr",
+        "waiver_profile": "part91-200ft-bvlos",
+        "max_altitude_ft": 200,
+        "airspace_class": "G",
+        "drone_count": 1,
+        "site_count": 1,
+        "rules": {
+          "min_battery_soc_percent": 80,
+          "max_battery_cycles": 300,
+          "max_wind_mph": 25,
+          "require_adsb_for_bvlos": true,
+          "require_shift_preflight": true,
+          "require_rapid_preflight_per_drone": true,
+          "max_concurrent_per_site_without_deconfliction": 1
+        },
+        "risks": [
+          "BVLOS waiver \u2014 ADS-B In and altitude caps apply"
+        ],
+        "source_mission": "/Users/enaguthiabhishek/skydio/skydio-mission-preflight/examples/dfr-rapid-launch/mission.yaml"
+      },
+      "receipt_dir": "out/site-export/receipts/20260708T064432Z-dfr-rapid-launch"
+    },
+    {
+      "doctor": {
+        "run_id": "20260708T064432Z-multi-drone-inspection",
+        "receipt_dir": "/Users/enaguthiabhishek/skydio/skydio-mission-preflight/out/site-export/receipts/20260708T064432Z-multi-drone-inspection",
+        "mission_id": "nypa-multi-inspect-004",
+        "overall_status": "caution",
+        "launch_recommendation": "review",
+        "checks": [
+          {
+            "signal": "shift_preflight",
+            "status": "pass",
+            "message": "Shift-start preflight completed",
+            "details": {}
+          },
+          {
+            "signal": "rapid_preflight",
+            "status": "pass",
+            "message": "All launching drones passed rapid preflight",
+            "details": {}
+          },
+          {
+            "signal": "battery_health",
+            "status": "pass",
+            "message": "All drone batteries within limits",
+            "details": {}
+          },
+          {
+            "signal": "software_freshness",
+            "status": "pass",
+            "message": "Fleet software meets minimum versions",
+            "details": {}
+          },
+          {
+            "signal": "adsb_bvlos",
+            "status": "pass",
+            "message": "ADS-B In present on all launching drones",
+            "details": {}
+          },
+          {
+            "signal": "waiver_altitude",
+            "status": "pass",
+            "message": "All planned altitudes within 200ft waiver cap",
+            "details": {
+              "waiver_cap_ft": 200
+            }
+          },
+          {
+            "signal": "weather_window",
+            "status": "pass",
+            "message": "Weather within operational window",
+            "details": {}
+          },
+          {
+            "signal": "multi_drone_deconfliction",
+            "status": "warn",
+            "message": "Multiple drones share geofence without deconfliction flag: north-yard=[x10-01, x10-02], south-yard=[x10-03, x10-04]",
+            "details": {
+              "overlapping_geofences": {
+                "north-yard": [
+                  "x10-01",
+                  "x10-02"
+                ],
+                "south-yard": [
+                  "x10-03",
+                  "x10-04"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "summary": {
+        "run_id": "20260708T064432Z-multi-drone-inspection",
+        "mission_id": "nypa-multi-inspect-004",
+        "operation": "multi_drone_inspection",
+        "waiver_profile": "part91-200ft-bvlos",
+        "drone_count": 4,
+        "input_dir": "/Users/enaguthiabhishek/skydio/skydio-mission-preflight/examples/multi-drone-inspection"
+      },
+      "plan": {
+        "mission_id": "nypa-multi-inspect-004",
+        "operation": "multi_drone_inspection",
+        "waiver_profile": "part91-200ft-bvlos",
+        "max_altitude_ft": 200,
+        "airspace_class": "G",
+        "drone_count": 4,
+        "site_count": 1,
+        "rules": {
+          "min_battery_soc_percent": 80,
+          "max_battery_cycles": 300,
+          "max_wind_mph": 25,
+          "require_adsb_for_bvlos": true,
+          "require_shift_preflight": true,
+          "require_rapid_preflight_per_drone": true,
+          "max_concurrent_per_site_without_deconfliction": 1
+        },
+        "risks": [
+          "Concurrent missions \u2014 verify site deconfliction is enabled",
+          "BVLOS waiver \u2014 ADS-B In and altitude caps apply",
+          "Multiple drones without fleet deconfliction flag"
+        ],
+        "source_mission": "/Users/enaguthiabhishek/skydio/skydio-mission-preflight/examples/multi-drone-inspection/mission.yaml"
+      },
+      "receipt_dir": "out/site-export/receipts/20260708T064432Z-multi-drone-inspection"
+    }
+  ]
+}

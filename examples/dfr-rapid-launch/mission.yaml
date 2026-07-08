@@ -1,0 +1,24 @@
+mission_id: lvmpd-dfr-rapid-001
+operation: dfr
+waiver_profile: part91-200ft-bvlos
+max_altitude_ft: 200
+airspace_class: G
+shift_preflight_completed: true
+deconfliction_enabled: false
+requires_adsb: true
+weather:
+  wind_mph: 8
+  precip: false
+sites:
+  - site_id: station-alpha
+    concurrent_missions: 1
+drones:
+  - drone_id: x10-alpha
+    battery_soc_percent: 94
+    battery_cycles: 85
+    software_version: "2.4.1"
+    min_software_version: "2.4.0"
+    adsb_in: true
+    rapid_preflight_done: true
+    planned_max_altitude_ft: 150
+    geofence_id: alpha-pad
